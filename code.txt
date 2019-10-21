@@ -1,0 +1,20 @@
+#include<LiquidCrystal.h>
+int count =0;
+
+LiquidCrystal lcd(2,3,4,5,11,12);
+void setup()
+{
+  lcd.begin(16,2);
+  pinMode(13, OUTPUT);
+  pinMode(10,INPUT);
+  
+}
+
+void loop()
+{
+  	
+	if(digitalRead(10) == HIGH)
+      count++;
+  	lcd.write(count);
+  
+}
